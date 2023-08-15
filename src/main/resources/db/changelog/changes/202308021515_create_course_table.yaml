@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202308021515_create_course_table
+      author: oswaldo
+      changes:
+        - createTable:
+            tableName: course
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: text
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: code
+                  type: int
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: department_id
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKey: fk_department_id
+                    reference: department(id)
+        - addAutoIncrement:
+            columnDataType: int
+            columnName: id
+            defaultOnNull: false
+            generationType: ALWAYS
+            incrementBy: 1
+            schemaName: public
+            tableName: course

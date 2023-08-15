@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changes/202308021500_create_department_table.yaml
+  - include:
+      file: db/changelog/changes/202308021515_create_course_table.yaml
+  - include:
+      file: db/changelog/changes/202308021530_create_student_table.yaml
+  - include:
+      file: db/changelog/changes/202308021600_create_professor_table.yaml
+  - include:
+      file: db/changelog/changes/202308030900_create_activity_table.yaml
+

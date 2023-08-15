@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202308021600_create_professor_table
+      author: oswaldo
+      changes:
+        - createTable:
+            tableName: professor
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: registration
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: ingress_date
+                  type: datetime
+              - column:
+                  name: department_id
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKey: fk_department_id
+                    reference: department(id)

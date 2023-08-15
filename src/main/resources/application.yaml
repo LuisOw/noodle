@@ -1,0 +1,9 @@
+spring:
+  jpa:
+    properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate.show-sql: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/noodle
+    username: noodle_user
+    password: noodle_pass

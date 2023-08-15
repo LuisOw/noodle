@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202308021530_create_student_table
+      author: oswaldo
+      changes:
+        - createTable:
+            tableName: student
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: registration
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: ingress_date
+                  type: datetime
+              - column:
+                  name: course_id
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKey: fk_course_id
+                    reference: course(id)

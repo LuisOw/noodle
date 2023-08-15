@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202308030900_create_activity_table
+      author: oswaldo
+      changes:
+        - createTable:
+            tableName: activity
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: text
